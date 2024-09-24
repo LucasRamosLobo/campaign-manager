@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "jest --forceExit",
-    "build": "echo 'No build process needed'"
+    "build": "echo 'No build process needed'",
+    "db:migrate": "npx sequelize-cli db:migrate --config src/config/config.json --migrations-path src/migrations --models-path src/models"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.7",
+    "sequelize-cli": "^6.6.2",
     "supertest": "^7.0.0"
   }
 }

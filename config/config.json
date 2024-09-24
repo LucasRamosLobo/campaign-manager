@@ -1,9 +1,0 @@
-{
-  "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "api_campanhas",
-    "host": "localhost",
-    "dialect": "postgres"
-  }
-}
