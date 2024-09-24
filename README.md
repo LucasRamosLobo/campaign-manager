@@ -28,7 +28,6 @@ Antes de executar a API, você precisará ter instalado:
    cd campaign-manager
    ```
 
-    ```
 2.Para executar a API com Docker, utilize o seguinte comando:
   ```bash
   docker-compose up --build
