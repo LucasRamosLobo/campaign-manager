@@ -3,24 +3,21 @@
     "username": "postgres",
     "password": "postgres",
     "database": "api_campanhas",
-    "host": "db", 
-    "dialect": "postgres",
-    "migrations": [
-      "src/migrations/*.js"
-    ]
+    "host": "db",
+    "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "postgres",
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "database": "api_campanhas",
+    "host": "db",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "postgres",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "database": "api_campanhas",
+    "host": "db",
     "dialect": "postgres"
   }
 }

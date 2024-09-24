@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   db:
     image: postgres:13
@@ -30,8 +29,6 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    command: >
-      sh -c "npm run db:recreate && npm run db:migrate:create && npm run db:migrate && npm start"
 
 volumes:
   postgres_data:

@@ -8,16 +8,14 @@ RUN npm install
 
 COPY . .
 
-#RUN npm run build
-
 FROM node:18-alpine
 
 WORKDIR /app
 
 COPY --from=build /app/node_modules ./node_modules
 
-COPY --from=build /app .
+COPY --from=build /app ./
+
+CMD ["sh", "-c", "npx sequelize-cli db:migrate --config src/config/config.json --migrations-path src/migrations --models-path src/models && npm start"]
 
 EXPOSE 3000
-
-CMD ["npm", "start"]

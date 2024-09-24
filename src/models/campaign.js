@@ -40,4 +40,11 @@ Campaign.init({
   paranoid: true,
 });
 
+
+sequelize.sync().then(() => {
+  console.log('Campanha sincronizada com o banco de dados!');
+}).catch(err => {
+  console.error('Erro ao sincronizar a campanha:', err);
+});
+
 module.exports = Campaign;
