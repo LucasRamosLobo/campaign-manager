@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "npm run db:recreate && node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "jest --forceExit",
     "build": "echo 'No build process needed'",
-    "db:migrate": "npx sequelize-cli db:migrate --config src/config/config.json --migrations-path src/migrations --models-path src/models"
+    "db:migrate": "npx sequelize-cli db:migrate --config src/config/config.json --migrations-path src/migrations --models-path src/models",
+    "db:recreate": "npx sequelize-cli db:migrate:undo:all --config src/config/config.json --migrations-path src/migrations --models-path src/models",
+    "db:migrate:create": "npx sequelize-cli migration:generate --name create-campaign --config src/config/config.json --migrations-path src/migrations --models-path src/models"
   },
   "keywords": [],
   "author": "",

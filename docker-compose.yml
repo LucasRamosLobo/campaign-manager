@@ -31,7 +31,7 @@ services:
       - .:/app
       - /app/node_modules
     command: >
-      sh -c "npm run db:migrate && npm start"
+      sh -c "npm run db:recreate && npm run db:migrate:create && npm run db:migrate && npm start"
 
 volumes:
   postgres_data:
