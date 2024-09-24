@@ -24,15 +24,12 @@ Antes de executar a API, você precisará ter instalado:
 1. Clone o repositório:
 
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/LucasRamosLobo/campaign-manager.git
    cd campaign-manager
    ```
-2. Intale as dependências
-    ```bash
-    npm install
 
     ```
-3.Para executar a API com Docker, utilize o seguinte comando:
+2.Para executar a API com Docker, utilize o seguinte comando:
   ```bash
   docker-compose up --build
   ```
