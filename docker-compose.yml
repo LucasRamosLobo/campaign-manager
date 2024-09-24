@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    container_name: api_campanhas_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: api_campanhas
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: api_campanhas_node
+    restart: always
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: api_campanhas
+      DB_HOST: db
+      DB_PORT: 5432
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm start
+
+volumes:
+  postgres_data:
