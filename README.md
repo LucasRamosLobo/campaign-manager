@@ -41,7 +41,7 @@ Antes de executar a API, você precisará ter instalado:
 ### 1. Criar Campanha
 
 - **Método:** `POST`
-- **Endpoint:** `/api/campanhas`
+- **Endpoint:** `/api/campaigns`
 - **Corpo da Requisição (JSON):**
 
   ```json
@@ -52,4 +52,65 @@ Antes de executar a API, você precisará ter instalado:
     "status": "ativa",
     "categoria": "publicidade"
   }
-   
+### 2. Listar Campanhas
+
+- **Método:** `GET`
+- **Endpoint:** `/api/campanhas`
+  - **Código:** 200
+  - **Resposta:**
+
+    ```json
+    [
+      {
+        "id": 1,
+        "nome": "Nome da Campanha",
+        "dataCadastro": "2024-09-24T10:00:00Z",
+        "dataInicio": "2024-09-25T10:00:00Z",
+        "dataFim": "2024-09-30T10:00:00Z",
+        "status": "ativa",
+        "categoria": "publicidade"
+      }
+    ]
+    ```
+
+### 3. Obter Campanha por ID
+
+- **Método:** `GET`
+- **Endpoint:** `/api/campanhas/:id`
+- **Resposta:**
+  - **Código:** 200
+  - **Resposta:**
+
+    ```json
+    {
+      "id": 1,
+      "nome": "Nome da Campanha",
+      "dataCadastro": "2024-09-24T10:00:00Z",
+      "dataInicio": "2024-09-25T10:00:00Z",
+      "dataFim": "2024-09-30T10:00:00Z",
+      "status": "ativa",
+      "categoria": "publicidade"
+    }
+    ```
+
+### 4. Atualizar Campanha
+
+- **Método:** `PUT`
+- **Endpoint:** `/api/campanhas/:id`
+- **Corpo da Requisição (JSON):**
+
+  ```json
+  {
+    "nome": "Nome Atualizado",
+    "dataInicio": "2024-09-26T10:00:00Z",
+    "dataFim": "2024-10-01T10:00:00Z",
+    "status": "pausada",
+    "categoria": "publicidade"
+  }
+### 5. Excluir Campanha
+
+- **Método:** `DELETE`
+- **Endpoint:** `/api/campanhas/:id`
+- **Resposta:**
+  - **Código:** 204
+  - **Corpo:** (vazio)
